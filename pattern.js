@@ -6,6 +6,7 @@ function patternT()
 //     * * *   
 //    * * * *  
 document.getElementById("result").innerHTML="";
+
 var res="" ;
     for(i=0;i<7;i++)
     {
@@ -162,6 +163,7 @@ function truncate() {
 
 //****************************************** */
 function swap(){
+  document.getElementById("result").innerHTML="";
     str = prompt("Enter a sentence");
     var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -188,6 +190,7 @@ function swap(){
 
 // ***************************************************
 function sumsquare(){
+  document.getElementById("result").innerHTML="";
     var arr= [];
     var size = 5; 
 
@@ -206,6 +209,7 @@ function sumsquare(){
 
 // *************************
 function oddeven(){
+  document.getElementById("result").innerHTML="";
     let res="";
     for (var i=0; i<=15; i++) {
         if (i === 0) {
@@ -223,15 +227,35 @@ function oddeven(){
 }
 // **********************************
 function alphabetical(){
+  document.getElementById("result").innerHTML="";
     let array =[];
-      let length = 5;
+     var out="" ;
   
-          for( i=0; i<length; i++)    
+          for( let i=0; i<3; i++)    
           {
-          array[i] = prompt( "enter a name:");
-          console.log(array[i])
+          name = prompt( "Enter a name ");
+          gender=prompt("Enter gender");
+          // console.log(array[i]);
+          array.push({name:name,gender:gender});
           }
-      array = array.sort();
-      document.getElementById("result").innerHTML=(`Alphabetical order is  ${array}`);
-  
+          for(let key in array){
+            console.log(array[key]);
+          }
+          // array.sort();
+          array.sort(function(a, b){
+            var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
+            if (nameA < nameB) //sort string ascending
+                return -1 
+            if (nameA > nameB)
+                return 1
+            return 0 //default return value (no sorting)
+        })
+          for(let key in array){
+           
+            out+="{   "+array[key].name +" , "+array[key].gender+"  }" +"<br>";
+          }
+          // console.log(array);
+      // array = array.sort();
+       document.getElementById("result").innerHTML+=(`Sorted Array of Objects <br> `);
+       document.getElementById("result").innerHTML+=out;
   }

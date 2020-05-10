@@ -1,100 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        *,body{
-           margin:0;
-           padding: 0;
-           font-size:"40px";
-           
+      *,
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: "70px";
+        font-family: "Times New Roman", Times, serif;
+      }
+      .container {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-top: 4px;
+      }
+      .col-md-6 {
+        align-items: center;
+        text-align: justify;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        font-weight: bold;
+        font-size: large;
+      }
+      p {
+        font-size: 150%;
+        color: blue;
 
-        }
-        .container{
-            margin-top: 2px;
-            margin-bottom: 2px;
-            padding-top: 4px;
-        }
-        .col-md-6{
-            align-items: center;
-            text-align: justify;
-            margin-top: 3px;
-            margin-bottom: 3px;
-        }
-        p{
-            font-size: 150%;
-            color: blue;
-
-            /* border: brown 2px solid; */
-        }
-        #resultDiv{
-           margin-top: 10px;
-            padding-top: 20px;
-            padding-bottom: 30px;
-            font-weight: bolder;
-        }
-        #result{
-            top: 0;
-            align-items: center;
-            /* border: solid 2px rgb(119, 219, 161); */
-            width: 50%;
-            padding-left: 30px;
-            /* text-align: left; */
-        }
-        input[type="radio"]:checked{
-            color: brown;
-            background-color: cornsilk;
-        }
+        /* border: brown 2px solid; */
+      }
+      #resultDiv {
+        margin-top: 10px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        font-weight: bolder;
+      }
+      #result {
+        top: 0;
+        align-items: center;
+        /* border: solid 2px rgb(119, 219, 161); */
+        width: 50%;
+        padding-left: 30px;
+        /* text-align: left; */
+      }
+      input[type="radio"] {
+        margin-left: 5px;
+        font-weight: bold;
+      }
     </style>
-   
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <br>
-        <br>
-        <h3>Please Choose the question</h3>
-        <br>
-        <br>
-        <div class="col-md-6 "style="width: 50%; height:40%;float:left ">
-    
-        
-   
-    <input type="radio" name="question" value="one" onclick="prime();"> 1.Get an array and Check whether the first element is prime or not <br> <br>
-    <input type="radio" name="question" value="two"onclick="frequent();">2.Find the most frequent item of an array.
-    <br><br>
-    <input type="radio" name="question" value="three"onclick="swap();">3.Accept a string as input and swap the case of each character.
-    <br><br>
-    <input type="radio" name="question" value="four" onclick="sumsquare();">4.Find the sum of squares of the elements of an array<br> <br>
-    <input type="radio" name="question" value="five" onclick="oddeven();"> 5. Iterate from 0 to 0-15 and check if the current number is odd or even
-    
-</div>
-<div class="col-md-6 "style="width: 50%; height:40%;float:left">
-    
-            <input type="radio" name="question" value="six"onclick="truncate();">6.Truncate a string if it is longer than the specified number of characters.
+      <br />
+      <br />
+      <h3 style="text-align: center; color: blue;">
+        Please Choose the question
+      </h3>
+      <br />
+      <br />
+      <div class="col-md-6" style="width: 50%; height: 40%; float: left;">
+        <input
+          type="radio"
+          name="question"
+          value="one"
+          id="one"
+          onclick="prime();"
+        />
+         1. Get an array and Check whether the first element is prime or not?
+        <br />
+        <br />
+        <input
+          type="radio"
+          name="question"
+          value="two"
+          id="two"
+          onclick="frequent();"
+        /> 2. Find the most frequent item of an array?. <br /><br />
+        <input
+          type="radio"
+          name="question"
+          value="three"
+          id="three"
+          onclick="swap();"
+        /> 3. Accept a string as input and swap the case of each character?.
+        <br /><br />
+        <input
+          type="radio"
+          name="question"
+          value="four"
+          id="four"
+          onclick="sumsquare();"
+        /> 4. Find the sum of squares of the elements of an array?<br />
+        <br />
+        <input
+          type="radio"
+          name="question"
+          value="five"
+          id="five"
+          onclick="oddeven();"
+        />
+         5. Iterate from 0 to 0-15 and check if the current number is odd or even?
+      </div>
+      <div class="col-md-6" style="width: 50%; height: 40%; float: left;">
+        <input
+          type="radio"
+          name="question"
+          value="six"
+          id="six"
+          onclick="truncate();"
+        /> 6. Truncate a string if it is longer than the specified number of
+        characters?.
 
-    <br><br>
-    <input type="radio" name="question" value="seven"onclick="findlarge();">7.Accept two integers and display the larger using findLarge() function. 
-    <br> <br>
-    <input type="radio" name="question" value="eight"onclick="alphabetical();"> 8.Using for…in to read the objects from an array entered by an user and to arrange it in alphabetical order.
-    <br><br>
-    <input type="radio" name="question" value="nine"onclick="javascriptp();">9.Print the letters of the word “Javascript” as below in each line using for…of.
-    <br><br>
-    <input type="radio" name="question" value="nine"onclick="patternT();">10.Write a JavaScript program to construct the following pattern, using a nested for loop.
+        <br /><br />
+        <input
+          type="radio"
+          name="question"
+          value="seven"
+          id="seven"
+          onclick="findlarge();"
+        /> 7. Accept two integers and display the larger using findLarge()
+        function?. <br />
+        <br />
+        <input
+          type="radio"
+          name="question"
+          value="eight"
+          id="eight"
+          onclick="alphabetical();"
+        />
+         8. Using for…in read the objects from an array entered by an user and
+        arrange it in alphabetical order?. <br /><br />
+        <input
+          type="radio"
+          name="question"
+          value="nine"
+          id="nine"
+          onclick="javascriptp();"
+        /> 9. Print the letters of the word “Javascript” in each line
+        using for…of?. <br /><br />
+        <input
+          type="radio"
+          name="question"
+          value="ten"
+          id="ten"
+          onclick="patternT();"
+        /> 10.Write a JavaScript program to construct the triangle pattern,
+        using a nested for loop.
+      </div>
+    </div>
 
-</div>
-</div>
-    
-    <br>
-    <br>  
-   <div id="resultDiv">
-    <p  >Result</p>
-    <br>
-   <div class="col-md-12" id="result">
-   
-    </div> 
-</div>
-    <script src="pattern.js"></script>  
-</body>
+    <br />
+    <br />
+    <div id="resultDiv">
+      <p>Result</p>
+      <br />
+      <div class="col-md-12" id="result"></div>
+    </div>
+    <script src="pattern.js"></script>
+  </body>
 </html>
